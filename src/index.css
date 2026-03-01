@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import "./styles/theme.css";
+
+/* ===== Base ===== */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply text-base-content; }
+}
+
+/* ===== Reusable ===== */
+@layer components {
+  .page-bg {
+    min-height: 100vh;
+    background: var(--soft-bg);
+  }
+  
+  .glass {
+    @apply bg-base-300/70 backdrop-blur border border-base-300;
+  }
+  .bg-gradient {
+    background: var(--soft-bg);
+  }
+  .card-soft {
+    /* Use base-200 so cards stay readable in dark mode */
+    @apply rounded-3xl bg-base-200/80 backdrop-blur border border-base-300;
+    box-shadow: 0 18px 60px rgba(0,0,0,.18);
+    background: var(--soft-bg);
+  }
+
+  .input-brand {
+    @apply w-full rounded-2xl border border-base-300 bg-base-100 px-4 py-3 outline-none;
+  }
+  .input-brand:focus {
+    @apply border-primary ring-2 ring-primary/20;
+  }
+
+  .btn-brand {
+    @apply rounded-2xl px-5 py-3 font-semibold text-white inline-flex items-center justify-center gap-2;
+  }
+  .btn-brand { background: linear-gradient(90deg, var(--brand-1) 0%, var(--brand-2) 35%, var(--brand-3) 65%, var(--brand-4) 100%); }
+  .btn-brand:hover { filter: brightness(1.05); }
+
+  /* btn-inside */
+  .btn-inside {
+    @apply rounded-xl px-5 py-2 font-semibold text-white inline-flex items-center gap-2;
+  }
+  .btn-inside { background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 35%); }
+  .btn-inside:hover { filter: brightness(1.05); }
+
+  .btn-brand-outline {
+    @apply rounded-2xl px-5 py-3 font-semibold bg-transparent inline-flex items-center justify-center gap-2;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+  .btn-brand-outline:hover { background: var(--color-primary); color: var(--color-primary-content); }
+
+  /* btn-outline-sm */
+  .btn-brand-outline-sm {
+    @apply rounded-2xl px-5 py-2 font-semibold bg-transparent inline-flex items-center justify-center gap-2;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-primary);
+  }
+  .btn-brand-outline-sm:hover { background: var(--color-primary); color: var(--color-primary-content); }
+
+  /* btn-inside-outline */
+  .btn-inside-outline {
+    @apply rounded-xl px-5 py-1.5 font-semibold bg-accent/10 inline-flex items-center justify-center gap-2;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-primary);
+  }
+  .btn-inside-outline:hover { background: var(--color-primary); color: var(--color-primary-content); }
+
+
+  .navlink {
+    @apply px-3 py-2 rounded-2xl transition font-medium;
+  }
+  .navlink-active { @apply bg-primary  text-primary-content; }
+  .navlink:hover { @apply bg-accent text-primary; }
+
+  /* gragient */
+  .navlink-active { background: linear-gradient(90deg, var(--brand-1) 0%, var(--brand-2) 35%, var(--brand-3) 65%, var(--brand-4) 100%); }
+  .navlink:hover { filter: brightness(1.08); }
+
+  .section-pad { @apply py-14 md:py-20; }
+}
+/* ===== FORCE THEME TOKENS (Tailwind v4 + DaisyUI conflict fix) ===== */
+html[data-theme="blood"] {
+  /* Tailwind v4 token names that your classes are using */
+  --color-base-100: #ffffff;
+  --color-base-200: #faf7f8;
+  --color-base-300: #efe7ea;
+  /* --color-base-content: #1b1114; */
+  --color-base-content: #2a0106; 
+
+  --color-primary: #46052D;
+  --color-secondary: #6A0B37;
+  --color-accent: #B32346;
+
+  /* primary sec acc V2 */
+  --color-primary: #6A0B37;
+  --color-secondary: #46052D;
+  --color-accent: #B32346;
+
+
+  /* (optional but nice) content colors */
+  --color-primary-content: #ffffff;
+  --color-secondary-content: #ffffff;
+  --color-accent-content: #ffffff;
+}
+
+html[data-theme="bloodDark"] {
+  --color-base-100: #19171b;
+  --color-base-200: #151317;
+  --color-base-300: #0f0e11;
+  --color-base-content: #f5eef0;
+
+  /* base color v2 */
+  --color-base-100: #1b0202;
+  --color-base-200: #220901;
+  --color-base-300: #38040e;
+  --color-base-content: #eacbd4;
+
+  --color-primary: #75020f;
+  --color-secondary: #51080d;
+  --color-accent: #b50b1b;
+
+  /* primary sec acc */
+  --color-primary: #750202;
+  --color-secondary: #51080d;
+  --color-accent: #b50b1b;
+
+  --color-primary-content: #ffffff;
+  --color-secondary-content: #ffffff;
+  --color-accent-content: #ffffff;
+}

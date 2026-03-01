@@ -1,0 +1,34 @@
+:root{
+  --brand-1:#46052D;
+  --brand-2:#6A0B37;
+  --brand-3:#8b0a3a;
+  --brand-4:#B32346;
+
+  --soft-bg: radial-gradient(1200px circle at 12% 10%,
+    rgba(179,35,70,.12), transparent 55%),
+    radial-gradient(900px circle at 85% 20%,
+    rgba(106,11,55,.10), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #faf7f8 60%, #ffffff 100%);
+}
+
+html[data-theme="bloodDark"]{
+  /* Dark palette: #19171b #75020f #51080d #2b0307 */
+  --brand-1:#75020f;
+  --brand-2:#51080d;
+  --brand-3:#2b0307;
+  --brand-4:#b50b1b;
+
+  --soft-bg:
+    radial-gradient(900px circle at 20% 12%, rgba(117, 2, 15, 0.35), transparent 55%),
+    radial-gradient(700px circle at 82% 30%, rgba(81, 8, 13, 0.30), transparent 55%),
+    radial-gradient(800px circle at 50% 85%, rgba(43, 3, 7, 0.28), transparent 60%),
+    linear-gradient(180deg, #19171b 0%, #151317 55%, #0f0e11 100%);
+}
+
+.brand-grad{
+  background: linear-gradient(90deg, var(--brand-1) 0%, var(--brand-2) 35%, var(--brand-3) 65%, var(--brand-4) 100%);
+}
+
+.brand-shadow{
+  box-shadow: 0 18px 55px rgba(70,5,45,.18);
+}
